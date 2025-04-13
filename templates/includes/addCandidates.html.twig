@@ -1,0 +1,160 @@
+{% block body %}
+<div class="container-formulaire">
+    <div class="card shadow-lg p-5 formulaire-candidat">
+        {{ form_start(form, {
+            'action': path('app_Candidates', {'id_offre': id_offre}),
+            'method': 'POST',
+            'attr': {'enctype': 'multipart/form-data', 'class': 'needs-validation', 'novalidate': 'novalidate'}
+        }) }}
+
+            {{ form_errors(form) }}
+
+        <div class="mb-4">
+            <div class="label-container">
+                {{ form_label(form.lastname, 'Nom', {'label_attr': {'class': 'form-label fw-bold text-dark'}}) }}
+                {{ form_widget(form.lastname, {'attr': {'class': 'form-control border-mauve', 'style': 'font-size: 1.1rem; margin-left: 8rem;'}}) }}
+                <div class="error-message">
+                {{ form_errors(form.lastname) }} 
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-4">
+            <div class="label-container">
+                {{ form_label(form.firstname, 'Prénom', {'label_attr': {'class': 'form-label fw-bold text-dark'}}) }}
+                {{ form_widget(form.firstname, {'attr': {'class': 'form-control border-mauve', 'style': 'font-size: 1.1rem; margin-left: 7rem;'}}) }}
+                <div class="error-message">
+                {{ form_errors(form.firstname) }} 
+            </div>
+            </div>
+        </div>
+
+        <div class="mb-4">
+            <div class="label-container">
+                {{ form_label(form.email, 'Email', {'label_attr': {'class': 'form-label fw-bold text-dark'}}) }}
+                {{ form_widget(form.email, {'attr': {'class': 'form-control border-mauve', 'style': 'font-size: 1.1rem; margin-left: 8rem;'}}) }}
+                <div class="error-message">
+                {{ form_errors(form.email) }} 
+            </div>
+            </div>
+        </div>
+
+        <div class="mb-4">
+            <div class="label-container">
+                {{ form_label(form.num_tel, 'Numéro de téléphone', {'label_attr': {'class': 'form-label fw-bold text-dark'}}) }}
+                {{ form_widget(form.num_tel, {'attr': {'class': 'form-control border-mauve', 'style': 'font-size: 1.1rem; margin-left: 1rem;'}}) }}
+                <div class="error-message">
+                {{ form_errors(form.num_tel) }} 
+            </div>
+            </div>
+        </div>
+
+        <div class="mb-4">
+            <div class="label-container">
+                {{ form_label(form.birthdayDate, 'Date de Naissance', {'label_attr': {'class': 'form-label fw-bold text-dark'}}) }}
+                {{ form_widget(form.birthdayDate, {'attr': {'class': 'form-control border-mauve', 'style': 'font-size: 1.1rem; margin-left: 4rem;'}}) }}
+                <div class="error-message">
+                {{ form_errors(form.birthdayDate) }} 
+            </div>
+            </div>
+        </div>
+
+        <div class="mb-4">
+            <div class="label-container">
+                {{ form_label(form.joiningDate, 'Date de Postulation', {'label_attr': {'class': 'form-label fw-bold text-dark'}}) }}
+                {{ form_widget(form.joiningDate, {'attr': {'class': 'form-control border-mauve', 'style': 'font-size: 1.1rem; margin-left: 4rem;'}}) }}
+                {{ form_errors(form.joiningDate) }} 
+            </div>
+        </div>
+
+        <div class="mb-4">
+            <div class="label-container">
+                {{ form_label(form.uploaded_cv, 'Votre CV', {'label_attr': {'class': 'form-label fw-bold text-dark'}}) }}
+                {{ form_widget(form.uploaded_cv, {'attr': {'class': 'form-control border-mauve', 'style': 'font-size: 1.1rem; margin-left: 9rem;'}}) }}
+                <div class="error-message">
+                {{ form_errors(form.uploaded_cv) }} 
+            </div>
+            </div>
+        </div>
+
+        <div class="mb-4">
+            <div class="label-container">
+                {{ form_label(form.gender, 'Genre', {'label_attr': {'class': 'form-label fw-bold text-dark'}}) }}
+                {{ form_widget(form.gender, {'attr': {'class': 'form-control border-mauve', 'style': 'font-size: 1.1rem; margin-left: 9rem;'}}) }}
+                {{ form_errors(form.gender) }} 
+            </div>
+        </div>
+
+        {{ form_end(form) }}
+    </div>
+</div>
+
+<style>
+        .container-formulaire {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.1); /* Fond transparent */
+            padding: 4rem 1rem;
+        }
+
+        .formulaire-candidat {
+    width: 100%;
+    max-width: 600px;
+    background: rgba(255, 255, 255, 0.85); /* Couleur semi-transparente */
+    border-radius: 15px;
+    backdrop-filter: blur(10px); /* flou derrière */
+    -webkit-backdrop-filter: blur(10px); /* support Safari */
+    padding: 2rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+        .border-mauve {
+            border-color: #8A2BE2;
+        }
+
+        .form-label {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .form-control {
+            margin: 1rem 0;
+            font-size: 1.1rem;
+        }
+
+        .error-message {
+            color: red;
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-top: 5px;
+        }
+/* Assure-toi que le bouton a une largeur qui lui permet d'être centré */
+.btn {
+  padding: 1rem 2rem;
+  font-weight: 700;
+  background: rgb(255, 255, 255);
+  color: blueviolet;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  border-bottom: 2px solid blueviolet;
+  border-right: 2px solid blueviolet;
+  border-top: 2px solid white;
+  border-left: 2px solid white;
+  transition-duration: 1s;
+  transition-property: border-top, border-left, border-bottom, border-right, box-shadow;
+  display: block; /* Permet de centrer le bouton */
+  margin: 1rem auto; /* Centre horizontalement le bouton */
+}
+
+.btn:hover {
+  border-top: 2px solid blueviolet;
+  border-left: 2px solid blueviolet;
+  border-bottom: 2px solid rgb(238, 103, 238);
+  border-right: 2px solid rgb(238, 103, 238);
+  box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px;
+}
+
+    </style>
+{% endblock %}
