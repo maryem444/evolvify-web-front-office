@@ -25,4 +25,5 @@ final class HomeController extends AbstractController
             'offres' => $offres,  // Passe les offres à la vue
         ]);
     }
+
 }
