@@ -74,7 +74,50 @@ class Utilisateur
         //$this->birthdayDate = new \DateTime(); 
        
     }
+// Add this property to your User entity
+#[ORM\Column(name: "facial_data", type: 'text', nullable: true)]
+private ?string $facialData = null;
 
+// Add the getter and setter methods
+public function getFacialData(): ?string
+{
+    return $this->facialData;
+}
+
+public function setFacialData(?string $facialData): self
+{
+    $this->facialData = $facialData;
+    return $this;
+}
+
+// Add a field to track if facial recognition is set up
+#[ORM\Column(name: "facial_auth_enabled", type: 'boolean', nullable: false)]
+private bool $facialAuthEnabled = false;
+
+public function isFacialAuthEnabled(): bool
+{
+    return $this->facialAuthEnabled;
+}
+
+public function setFacialAuthEnabled(bool $facialAuthEnabled): self
+{
+    $this->facialAuthEnabled = $facialAuthEnabled;
+    return $this;
+}
+
+#[ORM\Column(name: "face_image_filename", type: 'string', length: 255, nullable: true)]
+private ?string $faceImageFilename = null;
+
+public function getFaceImageFilename(): ?string
+{
+return $this->faceImageFilename;
+}
+
+public function setFaceImageFilename(?string $faceImageFilename): self
+{
+$this->faceImageFilename = $faceImageFilename;
+return $this;
+}
     public function getIdEmploye(): ?int
     {
         return $this->id_employe;

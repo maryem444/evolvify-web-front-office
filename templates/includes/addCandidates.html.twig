@@ -1,3 +1,4 @@
+
 {% block body %}
 <div class="container-formulaire">
     <div class="card shadow-lg p-5 formulaire-candidat">
@@ -91,25 +92,26 @@
 
 
 <style>
-        .container-formulaire {
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: rgba(255, 255, 255, 0.1); /* Fond transparent */
-            padding: 4rem 1rem;
-        }
+    .container-formulaire {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 1rem;
+    background: linear-gradient(rgba(255,255,255,0.05), rgba(255,255,255,0.05)), url('/assets/img/Acceuil.PNG');
 
-        .formulaire-candidat {
-    width: 100%;
-    max-width: 600px;
-    background: rgba(255, 255, 255, 0.85); /* Couleur semi-transparente */
-    border-radius: 15px;
-    backdrop-filter: blur(10px); /* flou derrière */
-    -webkit-backdrop-filter: blur(10px); /* support Safari */
-    padding: 2rem;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
+
+.formulaire-candidat {
+    background: white; /* Fond blanc opaque */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Optionnel : une ombre douce */
+    border-radius: 1rem; /* Coins arrondis si tu veux un look plus doux */
+}
+
 
         .border-mauve {
             border-color: #8A2BE2;
@@ -118,6 +120,7 @@
         .form-label {
             font-size: 1.1rem;
             font-weight: 600;
+            margin-left: 1rem; /* Ajoute un espace à gauche du label */
         }
 
         .form-control {
@@ -156,6 +159,7 @@
   border-right: 2px solid rgb(238, 103, 238);
   box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px;
 }
+
 
     </style>
 {% endblock %}
